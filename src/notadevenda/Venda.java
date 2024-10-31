@@ -1,8 +1,5 @@
 package notadevenda;
 
-import java.util.ArrayList;
-import java.util.List;
-
 class Venda {
     private List<Product> products;
 
@@ -10,8 +7,9 @@ class Venda {
         this.products = new ArrayList<>();
     }
 
-    public void addProduct(Product product) {
-        products.add(product);
+    public void adicionarProduto(String nome, double precoUnitario, int quantidade) {
+        Product produto = new Product(nome, precoUnitario, quantidade);
+        products.add(produto);
     }
 
     public double getTotalVenda() {
@@ -22,7 +20,7 @@ class Venda {
         return total;
     }
 
-    public void printNota() {
+    public void exibirNota() {
         System.out.println("------------ NOTA DE VENDA ------------");
         System.out.println("Produto         Qtde    Preço   Total");
         System.out.println("---------------------------------------");
